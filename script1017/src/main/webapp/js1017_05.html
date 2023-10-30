@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제이쿼리-선택자</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	body{text-align: center;}
+	section{width:300px; height:300px; border:3px solid black; margin:30px auto;}	
+	#txt{text-align: center; width:300px; height:100px; font-size: 20px; font-weight: 700;}
+</style>
+
+<script>
+	//제이쿼리 구문 선언(약식) 
+	$(function(){
+		$("#txt").text(10+5);
+		// fucntion 선언 불가		
+		
+		//제이쿼리 클릭 이벤트 호출
+		$("#btn").click(function(){
+				alert("test2");
+		});
+
+	
+	});
+	//제이쿼리 구문 선언
+/*
+	$(document).ready(function(){});
+*/	
+
+	function btn()
+	{
+		alert("test");
+	}
+	
+</script>
+</head>
+<body>
+	<section>		
+		<div id="txt">0</div>
+	</section>
+	<button onclick="btn()">confirm</button>
+	<button id="btn">confirm(2)</button>
+
+</body>
+</html>

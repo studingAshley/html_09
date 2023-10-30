@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			*{margin:0; padding:0}
+			#txtform{width:500px; margin:50px auto; display:flex;}
+			#title{width:500px; height:20px;  }
+			#place{width:500px; height:500px;}
+			#saveBtn{width:50px; width:100px; display:block; float:right;}
+			label{display: flex; height:20px; text-align: center;}
+			
+		</style>
+	</head>
+	<body>
+	<section>
+		<div>
+			<h1 style="margin:50px auto; text-align: center;">~ 게 시 판 ~</h1>
+			
+			<div>
+				<div>
+					
+					<form action="" method="get" id="txtform">
+						<div>
+							<label><p>제목:</p></label>
+							<input type="text" class="title" id="title" placeholder="제목을입력하세요">
+						</div>
+						<div>
+							<input type="text" class="place" id="place" placeholder="내용을 입력하세요">
+						</div>
+						<div>
+							<input type="button" class="saveBtn" id="saveBtn" value="저장" onclick="saveBtn()">
+						</div>
+						
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	</body>
+</html>

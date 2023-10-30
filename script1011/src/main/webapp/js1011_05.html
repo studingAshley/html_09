@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>연산</title>
+
+
+</head>
+<body>
+<div>
+
+	<form name="bmiform" class="bmiform" id="bmiform" method="get" action="#n">
+		<ul>
+			<li>
+				<label for="height">신장</label>
+				<input type="text" id="height" value>
+			</li>
+			<li>
+				<label for="weight">몸무게</label>
+				<input type="text" id="weight" value>
+			</li>
+			<li>
+				<button type="submit" onclick="calcBMI()">
+					측정하기
+				</button>
+			</li>
+		</ul>
+	</form>
+	
+</div>
+<script src="./js/script8.js"></script>
+<div id="result_box" class="inner_box" style="display:none">
+	<strong>MY BMI: <span id="guide_bmi1"></span></strong>
+
+	<p>나의BMI(신체질량지수)는 <em class="bold" id="guide_bmi2"></em> 이고, <em class="em_b_blue" id="guide_sttus"></em>입니다.</p>
+</div>
+
+
+</body>
+</html>

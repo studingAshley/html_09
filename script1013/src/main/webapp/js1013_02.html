@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			#content{border:1px solid black;width:200px; height:100px;}
+		</style>
+	</head>
+	<body>
+		<script>
+			function week(day){
+				switch(day){
+					case 0 : return "일요일";
+					break;
+					case 1 :return "월요일";
+					break;
+					case 2 :return "화요일";
+					break;
+					case 3 :return "수요일";
+					break;
+					case 4 :return "목요일";
+					break;
+					case 5 :return "금요일";
+					break;
+					case 6 :return "토요일";
+					break;
+				}
+			}
+			
+			var today = new Date();
+			var y = today.getFullYear();
+			var m = today.getMonth();
+			var d = today.getDate();
+			var day = today.getDay();
+			
+			document.write(y,"<br>");
+			document.write(m,"<br>");
+			document.write(d,"<br>");
+			document.write(day,"<br>");
+			
+			document.write(y+"-"+(m+1)+"-"+d+" "+week(day)+ "<br>");
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>집밥을 특별하게, 쿡킷</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/notice_style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		
+		
+		<script>
+			var dhtml ="";
+			$(function(){
+				
+				murl = "http://www.kobis.or.kr/kobisopenapi/webservice/rest/movie/searchMovieList.json?key=7058445392fd0398bcb479690ffa9ee6&itemPerPage=10&curPage=1";
+				$.ajax({
+					
+					url:murl,
+					data:"",
+					dataType:"json",
+					type:"get",
+					success:function(e){
+						
+						console.log(e.movieListResult.movieList);
+						
+						eh = e.movieListResult.movieList;
+						
+						console.log(eh.length);
+						$("#cont").html("");
+						
+						for(var i =0 ; i < eh.length ; i++ )
+						{
+							var movieNm = eh[i].movieNm ;
+							var openDt = eh[i].openDt ;
+							var genreAlt = eh[i].genreAlt ;
+							var peopleNm ="";
+							if(eh[i].directors.length>0)
+							{
+								peopleNm  = eh[i].directors[0].peopleNm;
+							}
+							else{
+								peopleNm ="undefined";
+							}
+							var companyNm  = "";
+							
+							if(eh[i].companys.peopleNm>0)
+							{
+								companyNm = eh[i].companys[0].companyNm
+							}
+							else 
+							{
+								companyNm = "undefined";
+							}
+							
+							
+							console.log(movieNm);
+							console.log(openDt);
+							console.log(genreAlt);
+							console.log(peopleNm);
+							console.log(companyNm);
+							
+							dhtml ="";
+							 dhtml +="<tr>";
+							 dhtml += "<td>"+(i+1)+"</td>";
+							 dhtml += "<td>"+movieNm+"</td>";
+							 dhtml += "<td>"+openDt+"</td>";
+							 dhtml += "<td>"+genreAlt+"</td>";
+							 dhtml += "<td>"+peopleNm+"</td>";
+							 dhtml += "<td>"+companyNm+"</td>";
+							 dhtml += "</tr>";
+							
+							
+							console.log(dhtml);
+							
+							$("#cont").append(dhtml);
+							
+							
+							/*
+								<tr>
+								<td>1</td>
+								<td>용감한 시민</td>
+								<td>20231025</td>
+								<td>액션, 드라마</td>
+								<td>박진표</td>
+								<td>스튜디오엔(주)</td>
+							</tr>
+							
+							*/
+						}
+						
+					},
+					error:function()
+					{
+						alert("Fail");
+					}
+					
+				});
+				
+			})
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+		<nav id="top">
+			<div>
+				<ul>
+					<a href="#"><li>회원가입</li></a>
+					<a href="#"><li>로그인</li></a>
+					<a href="#"><li>고객행복센터</li></a>
+					<a href="#"><li>기프트카드 등록</li></a>
+				</ul>
+			</div>
+		</nav>
+		<header>
+			<div class="logo"><a href="#"><h1></h1></a></div>
+			<div class="menu">
+				<ul>
+					<a href="#"><li>COOKIT소개</li></a>
+					<a href="#"><li>COOKIT메뉴</li></a>
+					<a href="#"><li>리뷰</li></a>
+					<a href="#"><li>이벤트</li></a>
+					<a href="#"><li>MY쿡킷</li></a>
+				</ul>
+			</div>
+			<div class="i_menu">
+				<ul>
+					<a href="#"><li>
+						<div class="i_menu_1"></div>
+						<div>장바구니</div>
+					</li></a>
+					<a href="#"><li>
+						<div class="i_menu_2"></div>
+						<div>메뉴찾기</div>
+						</li></a>
+				</ul>
+			</div>
+			
+			
+		</header>
+		<section id="sect">
+			<h1 id="tit" class="title">고객행복센터</h1>
+			<div class="f_search">
+				<h2>NOTICE 검색</h2>
+				<div class="box_search">
+					<div class="sch_wrap">
+						<form action="" method="get">
+							<input type="text" class="txt" id="fn_txt_srch" placeholder="검색어를 입력해주세요" name="keyWord"
+							required>
+							<botton type="button" class="ico"></botton>
+							<botton type="button" class="btn_search">
+								<span></span>
+							</botton>
+						</form>					
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="notice_conts">
+				<div class="tb_row">
+					<table>
+						<colgroup>
+							<col width="10%">
+							<col width="37%">
+							<col width="13%">
+							<col width="15%">
+							<col width="10%">
+							<col width="15%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>번호</th>
+								<th>제목</th>
+								<th>개봉일</th>
+								<th>장르</th>
+								<th>감독</th>
+								<th>제작사</th>
+								
+							</tr>
+							
+						</thead>
+						<tbody id="cont">
+							<tr>
+								<td>1</td>
+								<td>용감한 시민</td>
+								<td>20231025</td>
+								<td>액션, 드라마</td>
+								<td>박진표</td>
+								<td>스튜디오엔(주)</td>
+							</tr>
+							
+						</tbody>
+						
+					</table>
+				</div>
+			</div>
+			<div class="btn_write">글쓰기</div>
+			
+			<!-- 하단 넘버링 영역 -->
+			<div class="pagination">
+				<a href="#"><span></span></a>
+				<a href="#"><span>　</span></a>
+				<span class="page_num" >
+					<a href="#"><span>1</span></a>
+					<a href="#"><span>2</span></a>
+					<a href="#"><span>3</span></a>
+					<a href="#"><span>4</span></a>
+					<a href="#"><span>5</span></a>
+				</span>
+				<a href="#"><span>　</span></a>
+				<a href="#"><span>　</span></a>
+				
+			</div>
+		</section>
+		
+		
+		<a href="#top"><div class="top_btn"></div></a>
+		
+		<!-- footer영역 -->
+		<footer>
+			<div class="footer_wrap">
+				<div class="fl_l"><div><a href=""></a></div></div>
+				<div class="fl_c">
+					<ul>
+						<a href="#"><li>이용약관</li></a>
+						<a href="#"><li>개인정보처리방침</li></a>
+						<a href="#"><li>법적고지</li></a>
+						<a href="#"><li>사업자정보확인</li></a>
+					</ul>
+					<div>
+						<p>씨제이제일제당(주) | 대표이사 : 손경식, 최은석 | 사업자등록번호 : 104-86-09535</p>
+						<p>주소 : 서울 중구 동호로 330 CJ제일제당 센터 (우) 04560 | 통신판매업신고 중구 제 07767호 | 개인정보보호책임자 : 류화정</p>
+						<p>이메일 : cjon@cj.net | 호스팅제공자 : CJ올리브네트웍스㈜</p>
+						<p>고객님은 안전거래를 위해 현금등으로 결제시 LG U+ 전자 결제의 매매보호(에스크로) 서비스를 이용하실 수 있습니다.
+							<span>가입 사실 확인</span></p>
+						<p >© CJ CHEILJEDANG CORP. ALL RIGHTS RESERVED.</p>
+					</div>
+				</div>
+				<div class="fl_r">
+					<div class="cj_manage">CJ그룹계열사 바로가기 ＞</div>
+					<div class="f_cs_info">고객행복센터 <span>1668-1920</span></div>
+					<div class="foot_ccm"></div>
+				</div>
+			</div>
+		</footer>
+	
+	</body>
+</html>

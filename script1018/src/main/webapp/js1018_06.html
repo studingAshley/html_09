@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Event Task</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<style>
+	*{margin:0; padding:0;}
+
+</style>
+
+<script>
+		$(function(){
+			$("#email3").change(function(){
+				//alert($(this).val());
+				if($("#email3").val()=="")
+				{
+					
+					$("#email2").prop("readonly",false);
+					$("#email2").val("");
+					$("#email2").focus();
+					
+					return false;
+				}
+				$("#email2").val($(this).val());
+				$("#email2").prop("readonly",true);
+			});
+			
+		});
+	
+</script>
+
+</head>
+<body>
+
+<section>
+	<input type="text" name="email1" id="email1">@
+	<input type="text" name="email2" id="email2">
+	<select name="email3" id="email3">
+		<option value="" selected>직접입력</option>
+		<option value="naver.com">naver.com</option>
+		<option value="gmail.com">gmail.com</option>
+		<option value="daum.net">daum.net</option>
+	</select>
+	<button id="btn">SAVE</button>
+	
+</section>
+	
+	
+</body>
+</html>

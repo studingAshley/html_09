@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+	*{margin:0; padding:0;}
+	ul{list-style: none; text-align: center;}
+	li{width:130px; height:50px; border:3px solid black;}
+</style>
+<script>
+	$(function(){
+		$("li").click(function(){
+			alert($(this).text());
+			$(this).css("background","yellow");
+			$(this).css("border","3px solid red");
+		});
+		
+		$("#btn").click(function(){
+			alert("test");
+			$("#list li").eq(2).css("background","green");
+			
+		});
+	});
+</script>
+</head>
+<body>
+
+<ul id="list">
+	<li id="a01">구글</li>
+	<li>네이버</li>
+	<li>다음</li>
+	<li>네이트</li>
+
+</ul>
+<button id="btn"> 변경</button>
+</body>
+</html>

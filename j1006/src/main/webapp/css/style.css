@@ -3,6 +3,7 @@
 
 *{margin:0;padding:0; list-style: none; text-decoration: none; font-family: 'Noto Sans KR', sans-serif; 
 letter-spacing: -0.5px;}
+*, *:after, *:before {-webkit-box-sizing:border-box;box-sizing:border-box;}
 a{color:inherit;}
 /* 탑 영역 */
 nav{width:100%; height:35px; max-width:1920px; min-width: 1260px; background-color: #202020;}
@@ -144,8 +145,10 @@ width:160px; height:48px; background-size: 800px 800px;}
 .fl_c {width:630px; height:290px;}
 .fl_c ul{display: flex; color:white; font-size:13px; font-weight: 700;}
 .fl_c a{width:95px; height:23px; box-sizing:border-box; padding-right: 12px;}
-.fl_c p{float:left; margin-top:6px; color:#808080; font-size:12px; line-height:20px; white-space: nowrap;}
+/*.fl_c p{float:left; margin-top:6px; color:#808080; font-size:12px; line-height:20px; white-space: nowrap;}
 .fl_c p:nth-child(4) a{color:white; text-decoration: underline;}
+*/
+
 /*
 .fl_c a{width:95px; height:23px; box-sizing:border-box; padding-right: 15px; border-right:1px solid rgba(255,255,255,0.2);}
 .fl_c li:nth-child(2){width:135px;}
@@ -162,6 +165,12 @@ line-height: 21px; width:1px; height:12px; margin:0 12px; background-color:rgba(
 .fl_c li:first-child a:before{display: none;}
 .fl_c a:before{content:'';display: inline-block; vertical-align: middle; position:relative; 
 line-height: 21px; width:1px; height:12px; margin:0 12px; background-color:rgba(255,255,255,0.2);}
+.fl_c p{float:left; margin-top:6px; padding-right:8px; color:#808080; font-size:12px; line-height:20px; white-space:nowrap;}
+.fl_c p:nth-child(1):before{display: none;}
+.fl_c p:nth-child(4):before{display: none;}
+.fl_c p:nth-child(8):before{display: none;}
+.fl_c p:nth-child(10):before{display: none;}
+.fl_c p:nth-child(11):before{display: none;}
 .fl_c p:before{content:''; display:inline-block; position:relative; width:1px; height:11px; margin-right:8px; background-color:rgba(255,255,255,0.1); vertical-align:middle;}
 
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<script>
+	
+	var d = new Date();
+	var w = new Date("2002-04-30");
+	var t = new Date("2023-10-12");
+	var r = d.getTime() - w.getTime();
+	var r2 = d.getTime() - t.getTime();
+	
+	var a = Math.floor(r/(1000*60*60*24));
+	var ay = Math.floor(a/365);
+	var ad = Math.floor((a%365)/30);
+	var a2 = Math.floor(r2/(1000*60*60*24));
+	console.log(r);
+	console.log(a);
+	console.log(a2);
+	
+	document.write("2002년 한일 월드컵은 "+a+"일이 지났습니다.<br>");
+	
+	document.write("2002년 한일 월드컵은 "+ay+"년 "+ad+"개월"+ (ay%365)+"일이 지났습니다.");
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

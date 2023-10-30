@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Math</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		
+	<style>
+		#txt{width:300px; height:100px; border:1px solid black; font-size:20px; text-align: center;}
+	</style>
+
+</head>
+<body>
+<script>
+	var arr= [{"stdNum":1,"name":"Jason","email":"jstallon0@blinklist.com","gender":"Male"},
+{"stdNum":2,"name":"Artemis","email":"agwilym1@ftc.gov","gender":"Male"},
+{"stdNum":3,"name":"Mercy","email":"mtomsett2@slashdot.org","gender":"Female"},
+{"stdNum":4,"name":"Winifield","email":"weakle3@abc.net.au","gender":"Male"},
+{"stdNum":5,"name":"Pooh","email":"pjearum4@shop-pro.jp","gender":"Male"},
+{"stdNum":6,"name":"Cherry","email":"barkill5@wikipedia.org","gender":"Genderqueer"},
+{"stdNum":7,"name":"Vittoria","email":"vsherburn6@ibm.com","gender":"Female"},
+{"stdNum":8,"name":"Hebert","email":"hlambourne7@arizona.edu","gender":"Male"},
+{"stdNum":9,"name":"Rogerio","email":"rharrild8@dmoz.org","gender":"Male"},
+{"stdNum":10,"name":"Maurie","email":"msitlington9@umich.edu","gender":"Male"}];
+	
+function arr_print()
+{
+	console.log(arr);
+	$("#txt").text(arr[0].stdNum+" "+arr[0].name+" "+arr[0].email+" "+arr[0].gender+" ");
+}
+
+function search(name){
+	return 
+}
+
+function btn(){
+	var name = $("#name").val();
+	var sch_student = arr.filter(
+		(stu)=>/*함수호출*/{
+			return stu.name == name;
+			
+		}
+	);
+	console.log(sch_student);
+	$('#txt').text(sch_student);	
+}
+
+</script>
+
+	<h1>Name List</h1>
+	<input type="button" onclick="oopen()" value="Load">
+	<br>
+	<input type="text" name="name" id="name">
+	<input type="button" onclick="btn()" value="Search">
+	<br>
+	<div id="txt"></div>
+	
+	<script>arr_print();</script>
+</body>
+</html>

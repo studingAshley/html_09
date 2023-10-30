@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Math</title>
+</head>
+<body>
+<script>
+	var arr= new Array();
+	var arr2 = new Array(1,2,3,4,5);
+	var arr3=[1,2,"dkEhanswkd",3,4, 3];
+
+	arr.push(1);
+	arr2.push(4);
+	arr2.unshift(5);
+	arr2.splice(2,0,10,11);//2번째 방에 (0)기존데이터를삭제하지 않고 10과 11 삽입 
+	arr3.splice(1,1); 
+	document.write(arr+"<br>");
+	document.write(arr2+"<br>");
+	document.write(arr3+"<br>");
+	
+	document.write(arr.length+"<br>");
+	
+	const aaa= new XMLHttpRequest();
+
+</script>
+
+<h2>Use HTTP POST to Get JSON Data from a PHP Server</h2>
+
+<p id="demo"></p>
+
+<script>
+const dbParam = JSON.stringify({"limit":10});
+const xmlhttp = new XMLHttpRequest();
+var ttt = '{"name":"John", "age":30, "city":"New York"}';
+xmlhttp.onload = function() {
+  myObj = JSON.parse(ttt);
+  let text = "";
+  for (let x in myObj) {
+    text += myObj[x].name + "<br>";
+  }
+  document.getElementById("demo").innerHTML = text;
+}
+xmlhttp.open("POST", "json_demo_db_post.php");
+xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xmlhttp.send("x=" + dbParam);
+</script>
+
+<p>Try changing the "limit" property from 10 to 5.</p>
+
+</body>
+</html>

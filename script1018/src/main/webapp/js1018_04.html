@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	*{margin:0; padding:0;}
+	div{width:200px; height:200px; border:3px solid black;}
+	ul{list-style: none;}
+</style>
+</head>
+<body>
+	<script>
+		$(function(){
+			var arr1 = [{"area":"Seoul","name":"Hong"},
+			{"area":"Osaka","name":"Hong"},
+			{"area":"Tokyo","name":"Hong"},
+			{"area":"Newyork","name":"Hong"},
+			{"area":"Mexico","name":"Hong"},
+			{"area":"Maple World","name":"Hong"},
+			{"area":"Erin","name":"Hong"},
+			{"area":"Seoul","name":"Hong"}
+			];
+			
+			var arr2 = $.map(arr1,function(a,b){
+				console.log(a.area);
+				console.log(b);
+				if(a.area=="Seoul")
+				{
+					return a;
+				}
+				
+			});
+			
+			console.log(arr2);
+			
+			var dhtml = "";
+			$(arr2).each(function(){
+				dhtml += "지역 : "+ this.area+", 이름 : "+this.name+"<br>"
+			});
+			$("#txt").html(dhtml);
+
+			
+		})
+	</script>
+	
+	<div id="txt">
+		<div>
+			<ul>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
+	</div>
+	<button>Open</button>
+</body>
+</html>

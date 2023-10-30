@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+	*{margin:0; padding:0; text-align: center;}
+	section{width:1000px; margin-top : 50px auto 0; }
+	table{ width:100%; margin-top:30px;}
+	table, th, td{border:1px solid black; border-collapse: collapse;}
+	th, td{height:60px; font-size:20px;}
+	img{width:100px; height:100px;}
+</style>
+<script>
+	$(function(){
+		
+		var burl="https://apis.data.go.kr/B551011/PhotoGalleryService1/galleryList1?serviceKey=ug6PU1xTJgPhLhYpjU%2BUP%2F49s5oHuVCoKFmACMSq0YBgjzPgbN01TCNa%2F4Vxm8hTj8YUJ%2BSE27aIt%2BI%2FmaIENw%3D%3D&numOfRows=30&pageNo=1&MobileOS=ETC&MobileApp=AppTest&arrange=A&_type=json";
+		$.ajax({
+			url:burl,
+			type:"get",
+			data:{},
+			dataType:"json",
+			success:function(data)
+			{
+				console.log(data);
+				console.log(data['response']['body']['items']['item']);
+				
+				var arr = data['response']['body']['items']['item'];
+				
+				console.log(arr);
+				var dhtml="";
+					for(var i = 0 ; i < arr.length;i++)
+					{
+						dhtml+="<tr>";
+						dhtml+="<td>"+arr[i].galTitle+"</td>";
+						dhtml+="<td><img src ='"+arr[i].galWebImageUrl+"'></td>";
+						dhtml+="<td>"+arr[i].galPhotographyLocation+"</td>";
+						dhtml+="<td>"+arr[i].galPhotographer+"</td>";
+						dhtml+="</tr>";
+					}
+					$("#cont").html(dhtml);
+				
+			},
+			error:function()
+			{
+				console.log("Fail");
+			}
+			
+		});
+	})
+</script>
+</head>
+<body>
+
+	<seciton>
+		<h1>관광사진갤러리 목록조회</h1>
+		<button id="openbtn">Load</button>
+		<table>
+			<col width="15%">
+			<col width="50%">
+			<col width="20%">
+			<col width="15%">
+
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Image</th>
+					<th>Location</th>
+					<th>photographer</th>
+
+				</tr>				
+			</thead>
+			<tbody id="cont">
+
+			</tbody>
+		</table>		
+	</seciton>
+</body>
+</html>

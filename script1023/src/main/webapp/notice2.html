@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>집밥을 특별하게, 쿡킷</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/notice_style.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+		
+		
+		<script>
+			var dhtml ="";
+			$(function(){
+				
+				var murl = "https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo?serviceKey=ug6PU1xTJgPhLhYpjU%2BUP%2F49s5oHuVCoKFmACMSq0YBgjzPgbN01TCNa%2F4Vxm8hTj8YUJ%2BSE27aIt%2BI%2FmaIENw%3D%3D&numOfRows=20&pageNo=2&resultType=xml";
+				
+				
+				$.ajax({
+					
+					url:murl,
+					data:"",
+					dataType:"xml",
+					type:"get",
+					success:function(e){
+						
+						console.log($(e));
+						
+						eh = $(e).find("item");
+						
+						console.log(eh.length);
+						$("#cont").html("");
+						
+						for(var i =0 ; i < eh.length ; i++ )
+						{
+							var isinCd  = $(eh[i]).find("isinCd").text() ;
+							var itmsNm	 = $(eh[i]).find("itmsNm").text() ;
+							var mkp  = $(eh[i]).find("mkp").text() ;
+							var hipr = $(eh[i]).find("hipr").text() ;
+							var lopr = $(eh[i]).find("lopr").text() ;
+							var trqu = $(eh[i]).find("trqu").text() ;
+							var trPrc = $(eh[i]).find("trPrc").text() ;
+							
+							
+							console.log(isinCd);
+							console.log(itmsNm);
+							console.log(mkp);
+							console.log(hipr);
+							console.log(lopr);
+							
+							dhtml ="";
+							 dhtml +="<tr>";
+							 dhtml += "<td>"+isinCd+"</td>";
+							 dhtml += "<td>"+itmsNm+"</td>";
+							 dhtml += "<td>"+mkp+"</td>";
+							 dhtml += "<td>"+hipr+"</td>";
+							 dhtml += "<td>"+lopr+"</td>";
+							 dhtml += "<td>"+trqu+"</td>";
+							 dhtml += "<td>"+trPrc+"</td>";
+							 dhtml += "</tr>";
+							
+							
+							console.log(dhtml);
+							
+							$("#cont").append(dhtml);
+							
+							
+							/*
+								<tr>
+								<td>코드</td>
+								<td>종목명</td>
+								<td>시가</td>
+								<td>고가</td>
+								<td>저가</td>
+								<td>거래량</td>
+								<td>거래대금</td>
+							</tr>
+							
+							*/
+						}
+						
+					},
+					error:function()
+					{
+						alert("Fail");
+					}
+					
+				}); //ajax
+				
+				
+				
+				
+				$(".btn_search").click(function(){
+					
+					var data = $("#fn_txt_srch").val();
+					
+				var murl = "https://apis.data.go.kr/1160100/service/GetStockSecuritiesInfoService/getStockPriceInfo?serviceKey=ug6PU1xTJgPhLhYpjU%2BUP%2F49s5oHuVCoKFmACMSq0YBgjzPgbN01TCNa%2F4Vxm8hTj8YUJ%2BSE27aIt%2BI%2FmaIENw%3D%3D&numOfRows=20&pageNo=2&resultType=xml";
+				murl += "&itmsNm="+data;
+				
+				$.ajax({
+					
+					url:murl,
+					data:"",
+					dataType:"xml",
+					type:"get",
+					success:function(e){
+						
+						console.log($(e));
+						
+						eh = $(e).find("item");
+						
+						console.log(eh.length);
+						$("#cont").html("");
+						
+						for(var i =0 ; i < eh.length ; i++ )
+						{
+							var isinCd  = $(eh[i]).find("isinCd").text() ;
+							var itmsNm	 = $(eh[i]).find("itmsNm").text() ;
+							var mkp  = $(eh[i]).find("mkp").text() ;
+							var hipr = $(eh[i]).find("hipr").text() ;
+							var lopr = $(eh[i]).find("lopr").text() ;
+							var trqu = $(eh[i]).find("trqu").text() ;
+							var trPrc = $(eh[i]).find("trPrc").text() ;
+							
+							
+							console.log(isinCd);
+							console.log(itmsNm);
+							console.log(mkp);
+							console.log(hipr);
+							console.log(lopr);
+							
+							dhtml ="";
+							 dhtml +="<tr>";
+							 dhtml += "<td>"+isinCd+"</td>";
+							 dhtml += "<td>"+itmsNm+"</td>";
+							 dhtml += "<td>"+mkp+"</td>";
+							 dhtml += "<td>"+hipr+"</td>";
+							 dhtml += "<td>"+lopr+"</td>";
+							 dhtml += "<td>"+trqu+"</td>";
+							 dhtml += "<td>"+trPrc+"</td>";
+							 dhtml += "</tr>";
+							
+							
+							console.log(dhtml);
+							
+							$("#cont").append(dhtml);
+							
+							
+							/*
+								<tr>
+								<td>코드</td>
+								<td>종목명</td>
+								<td>시가</td>
+								<td>고가</td>
+								<td>저가</td>
+								<td>거래량</td>
+								<td>거래대금</td>
+							</tr>
+							
+							*/
+						}
+						
+					},
+					error:function()
+					{
+						alert("Fail");
+					}
+					
+				}); //ajax
+					
+					
+				});
+			})
+			
+		</script>
+		
+		
+		
+	</head>
+	<body>
+		<nav id="top">
+			<div>
+				<ul>
+					<a href="#"><li>회원가입</li></a>
+					<a href="#"><li>로그인</li></a>
+					<a href="#"><li>고객행복센터</li></a>
+					<a href="#"><li>기프트카드 등록</li></a>
+				</ul>
+			</div>
+		</nav>
+		<header>
+			<div class="logo"><a href="#"><h1></h1></a></div>
+			<div class="menu">
+				<ul>
+					<a href="#"><li>COOKIT소개</li></a>
+					<a href="#"><li>COOKIT메뉴</li></a>
+					<a href="#"><li>리뷰</li></a>
+					<a href="#"><li>이벤트</li></a>
+					<a href="#"><li>MY쿡킷</li></a>
+				</ul>
+			</div>
+			<div class="i_menu">
+				<ul>
+					<a href="#"><li>
+						<div class="i_menu_1"></div>
+						<div>장바구니</div>
+					</li></a>
+					<a href="#"><li>
+						<div class="i_menu_2"></div>
+						<div>메뉴찾기</div>
+						</li></a>
+				</ul>
+			</div>
+			
+			
+		</header>
+		<section id="sect">
+			<h1 id="tit" class="title">고객행복센터</h1>
+			<div class="f_search">
+				<h2>NOTICE 검색</h2>
+				<div class="box_search">
+					<div class="sch_wrap">
+						<form action="" method="get">
+							<input type="text" class="txt" id="fn_txt_srch" placeholder="검색어를 입력해주세요" name="keyWord"
+							required>
+							<botton type="button" class="ico"></botton>
+							<botton type="button" class="btn_search">
+								<span></span>
+							</botton>
+						</form>					
+						
+					</div>
+				</div>
+			</div>
+			
+			<div class="notice_conts">
+				<div class="tb_row">
+					<table>
+						<colgroup>
+							<col width="10%">
+							<col width="25%">
+							<col width="12%">
+							<col width="13%">
+							<col width="15%">
+							<col width="10%">
+							<col width="15%">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>코드</th>
+								<th>종목명</th>
+								<th>시가</th>
+								<th>고가</th>
+								<th>저가</th>
+								<th>거래량</th>
+								<th>거래대금</th>
+								
+							</tr>
+							
+						</thead>
+						<tbody id="cont">
+
+							
+						</tbody>
+						
+					</table>
+				</div>
+			</div>
+			<div class="btn_write">글쓰기</div>
+			
+			<!-- 하단 넘버링 영역 -->
+			<div class="pagination">
+				<a href="#"><span></span></a>
+				<a href="#"><span>　</span></a>
+				<span class="page_num" >
+					<a href="#"><span>1</span></a>
+					<a href="#"><span>2</span></a>
+					<a href="#"><span>3</span></a>
+					<a href="#"><span>4</span></a>
+					<a href="#"><span>5</span></a>
+				</span>
+				<a href="#"><span>　</span></a>
+				<a href="#"><span>　</span></a>
+				
+			</div>
+		</section>
+		
+		
+		<a href="#top"><div class="top_btn"></div></a>
+		
+		<!-- footer영역 -->
+		<footer>
+			<div class="footer_wrap">
+				<div class="fl_l"><div><a href=""></a></div></div>
+				<div class="fl_c">
+					<ul>
+						<a href="#"><li>이용약관</li></a>
+						<a href="#"><li>개인정보처리방침</li></a>
+						<a href="#"><li>법적고지</li></a>
+						<a href="#"><li>사업자정보확인</li></a>
+					</ul>
+					<div>
+						<p>씨제이제일제당(주) | 대표이사 : 손경식, 최은석 | 사업자등록번호 : 104-86-09535</p>
+						<p>주소 : 서울 중구 동호로 330 CJ제일제당 센터 (우) 04560 | 통신판매업신고 중구 제 07767호 | 개인정보보호책임자 : 류화정</p>
+						<p>이메일 : cjon@cj.net | 호스팅제공자 : CJ올리브네트웍스㈜</p>
+						<p>고객님은 안전거래를 위해 현금등으로 결제시 LG U+ 전자 결제의 매매보호(에스크로) 서비스를 이용하실 수 있습니다.
+							<span>가입 사실 확인</span></p>
+						<p >© CJ CHEILJEDANG CORP. ALL RIGHTS RESERVED.</p>
+					</div>
+				</div>
+				<div class="fl_r">
+					<div class="cj_manage">CJ그룹계열사 바로가기 ＞</div>
+					<div class="f_cs_info">고객행복센터 <span>1668-1920</span></div>
+					<div class="foot_ccm"></div>
+				</div>
+			</div>
+		</footer>
+	
+	</body>
+</html>

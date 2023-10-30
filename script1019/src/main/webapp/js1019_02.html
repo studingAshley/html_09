@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+	*{margin:0; padding:0;}
+	div{width:200px; height:600px; border:1px solid black;}
+	h4{width:200px; height:60px;}
+	ul li{width:200px; height:60px; background:yellow; border:1px solid black;}
+
+</style>
+</head>
+<body>
+
+<script>
+	$(function(){
+		var ttoggle = true;
+		$("h4").click(function(){
+//			$("ul").css("display","block");
+			$("ul").stop().slideToggle(1000,"linear",function(){
+				if(ttoggle)
+				{
+					$("h4").text("검색사이트-열기");
+					ttoggle=!ttoggle;
+				}
+				else
+				{
+					$("h4").text("검색사이트-닫기");
+					ttoggle=!ttoggle;
+				}
+				
+			});
+			
+		});
+	});
+	
+</script>
+	<div>
+		<h4>검색사이트-닫기</h4>
+		<ul>
+			<li>Google</li>
+			<li>Naver</li>
+			<li>Daum</li>
+			<li>Nate</li>
+		</ul>
+		
+	</div>
+</body>
+</html>

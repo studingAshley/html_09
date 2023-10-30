@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Event Task</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<style>
+	*{margin:0; padding:0;}
+	section{height:5000px;}
+	div #txt{width:400px; height:200px; border:3px solid black;}
+	button{width:120px; height:60px;}
+	input{width:400px; height:40px; font-size: 40px;}
+	#d01{position:fixed; width:500px; height:600px;}
+	
+</style>
+
+<script>
+		$(function(){
+			$("#btn").click(function(){
+				$("#txt").append("<h1>Naver</h1>");
+			});
+			
+			$("#memo").keypress(function(a){
+				console.log(a);
+				if(a.keyCode==13)
+				{
+					$("#txt").append($("#memo").val());
+					$("#memo").val("");
+				}
+			});
+			
+			/*
+			$(window).on("scroll",function(){
+				console.log($(this))
+				$("#txt").text(this.scrollY);
+				$(this).scrollTop();
+				
+			});//body scroll
+			*/
+
+			
+			$("#sec").on("scroll click",function()
+				{
+					console.log("test");
+				}
+			);
+			
+			
+		});
+	
+</script>
+
+</head>
+<body>
+
+<section id="sec">
+	<div id="d01">
+		<div id="txt"></div>
+		<input type="text" name="memo" id="memo"><br>
+		<button id="btn">SAVE</button>
+		
+		
+	</div>
+</section>
+	
+	
+</body>
+</html>

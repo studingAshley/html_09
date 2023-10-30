@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Browser</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	#txt{width:200px; height:100px; border:1px solid black; font-size:30px; text-align: center; }
+</style>
+<script>
+
+
+</script>
+	
+
+</head>
+<body>
+
+ 	<div id="txt">00:00:00</div>
+
+	<button onclick="start()">시작</button>
+	<button onclick="stop()">정지</button>
+<script>
+	var number=0;
+	var setin ;
+console.log("???script??");
+	function start()
+	{
+		console.log("???start??");
+		if(setin){ return; }
+		setin = setInterval(function(){
+			var today = new Date();
+			var hour = String(today.getHours()).padStart(2,"0");
+			var minute = String(today.getMinutes()).padStart(2,"0");
+			var sec = String(today.getSeconds()).padStart(2,"0");
+			
+			$("#txt").text(hour+":"+minute+":"+sec+"~"+number++);
+			
+			console.log(setin);
+			console.log("??????");
+		},1000);
+		
+	}
+	
+	function stop()
+	{
+		console.log("??stop?");
+		clearInterval(setin);
+		setin=null;
+		console.log(setin);
+	}
+</script>
+</body>
+</html>

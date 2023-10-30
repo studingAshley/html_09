@@ -1,0 +1,122 @@
+@charset "UTF-8";
+
+
+/* 주석 : content영역 - notice */
+
+
+#sect{height:100%}
+#tit{text-align: left; border-bottom: 4px solid #202020; padding-bottom:36px;	
+
+}
+.f_search{margin-top: 56px; height:180px;  width: 1180px;}
+.f_search h2{font-size:22px; font-weight:700; color:#101010; }
+.box_search{ margin-top:16px; padding:32px;  background:#f7f7f7;
+box-sizing: border-box;
+}
+
+.sch_wrap{width:644px; margin:0 auto; position:relative; }
+.sch_wrap form{ width:644px; }
+.box_search .txt{box-sizing:border-box;   width:644px; height:68px; margin:0 auto; 
+border:2px solid #202020;
+font-size:20px; padding:0 106px 0 20px; display: inline-block;
+color:#101010; font-size:20px; opacity: 1;
+	}
+.box_search form{ margin: 0 auto; display: inline-block;
+margin:0 auto;
+}
+
+.f_search .btn_search span{ 
+
+	display: inline-block;
+	position: absolute;
+	right:18px;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    border:0;
+    text-align: center;
+    margin-top: -16px;
+    background: url('../images/ico_set2.png') -600px -150px no-repeat;
+    background-size: 800px 800px;
+}
+
+
+.notice_conts{width:1180px; margin:62px 0 30px;
+box-sizing: border-box;}
+.tb_row{width:1180px;  border-top:2px solid #202020; 
+box-sizing: border-box;
+border-bottom: 2px solid #202020; 
+}
+.tb_row table{width:1180px;
+	border-collapse: collapse; font-size:15px; font-weight:400; color:#606060; 
+letter-spacing: -0.5px;}
+.tb_row th,td{border-bottom:1px solid #e0e0e0; text-align: center; box-sizing: border-box; padding:20px 24px;
+}
+.tb_row th{background:#f2f2f2; border-bottom: 2px solid #e0e0e0; }
+
+
+/* 글쓰기 버튼*/
+
+.btn_write{border:1px solid black; width:130px; height:40px;
+background:#606060; color:white; text-align: center; float:right;
+line-height:40px;
+}
+
+/* 하단 넘버링*/
+.pagination{ clear:both; margin-top:70px;
+	width:1180px; height:40px; text-align: center;
+}
+
+.pagination a{margin:0; padding:0; width:40px; height:40px; box-sizing: border-box;
+ position:relative; 
+ }
+.pagination a>span{display: inline-block; width:40px; height:40px; box-sizing: border-box; font-size:14px; font-weight: 700;
+text-align: center; line-height: 40px; position:relative; 
+}
+.pagination>a:nth-of-type(1)>span{line-height: 40px;  background: url('../images/ico_set.png') -3px -300px no-repeat;
+background-size: 800px 800px;  
+}
+.pagination>a:nth-child(1){display: flex; width:40px; height:40px; line-height: 40px; vertical-align: center; }
+
+.pagination>a:nth-of-type(2)>span{background: url('../images/ico_set.png') -43px -300px no-repeat;
+background-size: 800px 800px;
+}
+
+.pagination>a:nth-of-type(3)>span{background: url('../images/ico_set.png') -83px -300px no-repeat;
+background-size: 800px 800px; 
+}
+.pagination>a:nth-of-type(4)>span{content: url('../images/ico_set.png') -123px -300px no-repeat; background: url('../images/ico_set.png') -123px -300px no-repeat;
+background-size: 800px 800px;
+}
+
+.page_num{display: inline-block; width:240px; height:40px;}
+.page_num span{border:1px solid black; padding:0 5px;}
+.page_num>a>span:hover{background:#101010; color:white; font-weight: 700;}
+
+/*
+.btn_search{
+	width: 32px;
+    height: 32px;
+}
+*/
+
+/*.box_search>form{box-sizing: border-box; }
+.box_search input.txt{ display: inline-flex;  vertical-align: middle;
+	width:644px; height:68px;
+	border:2px solid #202020;
+	font-size:20px; padding:0 106px 0 20px; display: inline-block;
+	color:#101010; font-size:20px; opacity: 1;
+}
+
+.btn_search{ display: flex;
+position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    margin-top: -16px;
+    background: url('../images/ico_set2.png') -600px -150px no-repeat;
+    background-size: 800px 800px;
+}
+*/
+

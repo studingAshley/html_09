@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script>
+	const obj = { content: 'hello' }
+
+	const str = JSON.stringify(obj);
+	const blob = new Blob([str], {
+	  type: 'application/json;charset=utf-8',
+	});
+	
+	const blobURL = window.URL.createObjectURL(blob);
+	const tempLink = document.createElement('a');
+	tempLink.style.display = 'none';
+	tempLink.href = "https://www.youtube.com/embed/jyp2qpDrjBs?si=Uj34npbONN1r3_ii";
+	tempLink.setAttribute('download', `filename.mp4`);
+	document.body.appendChild(tempLink);
+	tempLink.click();
+	document.body.removeChild(tempLink);
+	window.URL.revokeObjectURL(blobURL);
+</script>
+</body>
+</html>

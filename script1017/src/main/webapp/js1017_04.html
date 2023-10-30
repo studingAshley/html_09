@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+	*{margin:0; padding:0;}
+	div{width:100px; height:100px; border:3px solid black; text-align: center; font-size:30px;}
+</style>
+</head>
+<body>
+	<script>
+		function btn(num1,num2)
+		{
+			
+			var result = add(num1, num2);
+			console.log(result);
+			$("#main").text(result);
+		}
+		
+		function add(num1, num2)
+		{
+			return num1+num2;
+		}
+	</script>
+	
+	<div id="main"></div>
+	<button onclick="btn(10,2)">확인</button>
+	
+</body>
+</html>

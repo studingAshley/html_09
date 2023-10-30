@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+	*{margin:0; padding:0;}
+	div{width:500px; height:100px; border:1px solid black;}
+	form{height:2000px; }
+</style>
+<script>
+	$(function(){
+		
+		
+		$("#btn").click(function(){
+			var notchecked = false;
+			console.log($("input:checkbox"));
+			$("input[type=checkbox]").each(function(){
+				if(this.checked==false){
+				//	alert("선택되지 않은 체크박스"+this.id);
+					if(confirm("동의가 한개라도 되어있지 않으면 다음으로 넘어갈 수 없습니다. 모두 동의하시겠습니까?"))
+					{
+						$("input[type=checkbox]").each(function(){
+							this.checked=true;
+							notchecked = true;
+						});
+					}
+					return false;
+				}
+
+			});
+			if(!notchecked)
+			{
+				
+			}
+			/*
+			if(notchecked)
+			{
+				if(confirm("동의가 한개라도 되어있지 않으면 다음으로 넘어갈 수 없습니다. 모두 동의하시겠습니까?"))
+				{
+					$("input[type=checkbox]").each(function(){
+						this.checked=true;
+					});
+				}
+			}
+			*/
+		});
+	});
+</script>
+</head>
+<body>
+<form action="#" method="get" name="frm">
+	<div>First notice</div>
+	<label form="agree1">agree the first</label>
+	<input type="checkbox" name="agree1" id="agree1">
+	<br>
+	<div>Second notice</div>
+	<label form="agree2">agree the second</label>
+	<input type="checkbox" name="agree2" id="agree2">
+	<br>
+	<div>Third notice</div>
+	<label form="agree3">agree the third</label>
+	<input type="checkbox" name="agree3" id="agree3">
+	<br>
+	<button type="button" id="btn">확인</button>
+</form>
+</body>
+</html>

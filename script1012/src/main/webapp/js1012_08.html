@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	*{margin:0; padding:0}
+	h1{text-align: center; margin:30px;}
+	table{width:600px; margin:0 auto;}
+	table,th,td{border:1px solid black; border-collapse: collapse;}
+	th,td{width:100px; height:40px; font-size: 15px; text-align: center;}
+	th{background: #efefef;}
+</style>
+</head>
+<body>
+
+	<section>
+		<h1> 바뀌라고4 </h1>
+		<table id="tcont">
+			<thead id="thcont">
+				<tr>
+					<th colspan="5">2단</th>
+				</tr>
+			</thead>
+			<tbody id="tbcont">
+				<tr>
+					<td>2</td>
+					<td>*</td>
+					<td>1</td>
+					<td>=</td>
+					<td>2</td>
+					
+				</tr>
+			</tbody>
+		</table>	
+	</section>
+	
+	<script>
+		
+		var mult = function(){
+			
+			const element = document.querySelector('#tbcont');
+			const element2 = document.querySelector('#thcont');
+			const element3 = document.querySelector('#tcont');
+			element3.innerHTML="";
+			var hdata="";
+			var hdata2="";
+		/*	for(var i = 0 ; i < 8 ;i++)
+			{
+				hdata +="<tr>";
+				hdata +="<td>2</td>"
+				hdata +="<td>*</td>"
+				hdata +="<td>1</td>"
+				hdata +="<td>=</td>"
+				hdata +="<td>2</td>"
+				hdata +="</tr>"
+			}
+		*/
+
+
+			for(var j = 2; j <=9 ; j++)
+			{
+				hdata2+= '<tr><th colspan="5">'+j+'단</th></tr>';
+				
+				for(var k = 1; k <=9 ; k++)
+				{	hdata +="<tr>";
+					hdata +="<td>"+j+"</td>";
+					hdata +="<td>*</td>";
+					hdata +="<td>"+k+"</td>";
+					hdata +="<td>=</td>";
+					hdata +="<td>"+(j*k)+"</td>";
+					hdata += "</tr>";
+				}
+				
+			
+				element3.innerHTML += hdata2+hdata;
+				hdata="";
+				hdata2="";
+			}
+		}
+		
+		
+
+		
+		mult();
+	</script>
+	
+</body>
+</html>

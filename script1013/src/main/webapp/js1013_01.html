@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style>
+			#content{border:1px solid black;width:200px; height:100px;}
+		</style>
+	</head>
+	<body>
+		<script>
+			function btn(){
+				const element =	document.querySelector('#name');
+				var name = element;
+				if(name=="")
+				{
+					alert("이름을 입력해주세요");
+					element.focus();
+					return false;
+				}
+				
+				console.log("이름 : ",name);
+				
+				const element2 = document.querySelector('#content');
+				var kor = element2.innerText;
+				console.log("국어점수 : ",kor);
+			}
+		</script>
+		<h1>학생성적프로그램</h1>
+		<form action="#" method="get">
+				<label></label>
+				<input type="text" name="name" id="name">
+				<br>
+				<button type="button" onclick="btn()">저장</button>
+		</form>
+		<div id="content">100 </div>
+	</body>
+</html>

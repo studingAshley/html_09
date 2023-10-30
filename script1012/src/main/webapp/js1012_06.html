@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+	*{margin:0; padding:0;}
+	section{width:400px; margin:0 auto;}
+	h1{text-align:center; font-size:50px; margin-bottom:30px;}
+	buttom{width:120px; height:40px; margin:20px auto;}
+	div{width:400px; height:400px; border:3px solid black; overflow: hidden;}
+	img{width:500px; }
+	
+	table,th,td{border:1px solid black; border-collapse:collapse;}
+</style>
+</head>
+<body>
+	
+
+<script>
+		function imgBtn(){
+			const element = document.querySelector('div[id="img01"]');
+			element.innerHTML = "<img src='./images/k1.jpg'>";
+			const element2 = document.querySelector('input[id="txt"]');
+			element2.type="button";
+			element2.style="width:100px";
+			element2.value="changed";
+		}
+</script>
+
+
+	
+	<section>
+		<h1>Image</h1>
+			<button type="button" onclick="imgBtn()">Insert</button>
+			<div id="img01">
+				
+			</div>
+			<input type="text" name="txt" id="txt">
+	</section>
+</body>
+</html>

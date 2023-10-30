@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제이쿼리-선택자</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<style>
+	*{margin:0; padding:0; text-align: center;}
+	body{text-align: center;}
+	section{width:100px; height:100px; border:3px solid black; margin:30px auto; text-align: center;}	
+	#txt{text-align: center; width:100%; height:100px; font-size: 20px; font-weight: 700;}
+	button{width:100px; height:40px; margin:0; padding:0; padding-inline:0px;}
+</style>
+
+<script>
+	var w =100;
+	//제이쿼리 구문 선언(약식) 
+	$(function(){
+		var a = $("#txt").css("width");
+		$("#txt").text(a);
+		// fucntion 선언 불가		
+		
+		//제이쿼리 클릭 이벤트 호출
+		$("#btn").click(function(){
+
+			w = w+10;
+			$("#sec").css("width",w+"px");
+			$("#txt").text(w+"px");
+		});
+		
+		$("#btn2").click(function(){	
+			w = w-10;
+
+			if(w<100){w=100;}
+			$("#sec").css("width",w+"px");
+			$("#txt").text(w+"px");
+		});
+	
+	});
+	//제이쿼리 구문 선언
+/*
+	$(document).ready(function(){});
+*/	
+
+	function btn()
+	{
+		alert("test");
+	}
+	
+</script>
+</head>
+<body>
+	<section id="sec">		
+		<div id="txt">0</div>
+	</section>
+	<button id="btn">확대</button>
+	<button id="btn2">축소</button>
+
+</body>
+</html>

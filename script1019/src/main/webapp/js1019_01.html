@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+	*{margin:0; padding:0;}
+	div{width:200px; height:600px; border:1px solid black;}
+	h4{width:200px; height:60px;}
+	ul li{width:200px; height:60px; background:yellow; border:1px solid black;}
+
+</style>
+</head>
+<body>
+
+<script>
+	$(function(){
+		var ttoggle01 = true;
+		var ttoggle02 = true;
+		$("#t01").click(function(){
+//			$("ul").css("display","block");
+			$(".c01").stop().slideToggle(1000,"linear",function(){
+				if(ttoggle01)
+				{
+					ttoggle01=!ttoggle01;
+					ttoggle02 = true;
+					$(".c02").stop().slideDown(1000,"linear",function(){});
+				}
+				else
+				{
+					ttoggle01=!ttoggle01;
+					ttoggle02 = false;
+					$(".c02").stop().slideUp(1000,"linear",function(){});
+				}
+				
+			});
+			
+		});
+		
+		$("#t02").click(function(){
+			$(".c02").stop().slideToggle(1000,"linear",function(){
+				if(ttoggle02)
+				{
+					ttoggle02=!ttoggle02;
+					ttoggle01 = true;
+					$(".c01").stop().slideDown(1000,"linear",function(){});
+				}
+				else
+				{
+					ttoggle02=!ttoggle02;
+					ttoggle01 = false;
+					$(".c01").stop().slideUp(1000,"linear",function(){});
+				}
+				
+			});
+			
+		});
+	});
+	
+</script>
+	<div>
+		<h4 id="t01">검색사이트</h4>
+		<ul class="c01">
+			<li>Google</li>
+			<li>Naver</li>
+			<li>Daum</li>
+			<li>Nate</li>
+		</ul>
+		<h4 id="t02">배달사이트</h4>
+		<ul class="c02">
+			<li>쿠팡이츠</li>
+			<li>배달의민족</li>
+			<li>요기요</li>
+			<li>두잇</li>
+		</ul>
+	</div>
+</body>
+</html>
